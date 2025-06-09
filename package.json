@@ -1,6 +1,6 @@
 {
   "name": "@qubit-ltd/clone",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "description": "A JavaScript library provides a deep clone function",
   "author": "Haixing Hu",
   "license": "Apache-2.0",
@@ -71,6 +71,7 @@
     "@vue/test-utils": "^2.4.6",
     "babel-jest": "^29.7.0",
     "check-es-version": "^1.5.1",
+    "clean-jsdoc-theme": "^4.3.0",
     "core-js": "^3.41.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
