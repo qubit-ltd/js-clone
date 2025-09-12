@@ -1,6 +1,6 @@
 {
   "name": "@qubit-ltd/clone",
-  "version": "1.13.3",
+  "version": "1.13.4",
   "description": "A JavaScript library provides a deep clone function",
   "author": "Haixing Hu",
   "license": "Apache-2.0",
@@ -42,9 +42,9 @@
     "deploy:all": "npm run deploy && npm publish --registry='https://registry.npmjs.org/' --access public"
   },
   "peerDependencies": {
-    "@babel/runtime": "^7.26.0",
-    "@qubit-ltd/naming-style": "^1.3.9",
-    "@qubit-ltd/typeinfo": "^3.3.2"
+    "@babel/runtime": "^7.28.4",
+    "@qubit-ltd/naming-style": "^1.3.10",
+    "@qubit-ltd/typeinfo": "^3.3.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.3",
@@ -59,7 +59,7 @@
     "@qubit-ltd/naming-style": "^1.3.10",
     "@qubit-ltd/rollup-builder": "^1.8.12",
     "@qubit-ltd/type-detect": "^2.2.3",
-    "@qubit-ltd/typeinfo": "^3.3.3",
+    "@qubit-ltd/typeinfo": "^3.3.4",
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.6",
