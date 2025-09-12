@@ -6,7 +6,7 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import { BIGINT_EXISTS } from '@qubit-ltd/type-detect';
+import { BIGINT_EXISTS } from '@qubit-ltd/type-detect/src/feature-detect';
 import clone from '../src';
 
 /**
