@@ -22,13 +22,13 @@ import { NamingStyle } from '@qubit-ltd/naming-style';
  * @author Haixing Hu
  */
 function getTargetKey(sourceKey, options) {
-  if (options && (options.convertNaming === true)) {
-    const sourceNamingStyle = NamingStyle.of(options.sourceNamingStyle);
-    const targetNamingStyle = NamingStyle.of(options.targetNamingStyle);
-    return sourceNamingStyle.to(targetNamingStyle, sourceKey);
-  } else {
-    return sourceKey;
+  if (options && options.convertNaming) {
+    const { sourceNamingStyle, targetNamingStyle } = options;
+    if (sourceNamingStyle && targetNamingStyle) {
+      return sourceNamingStyle.to(targetNamingStyle, sourceKey);
+    }
   }
+  return sourceKey;
 }
 
 export default getTargetKey;

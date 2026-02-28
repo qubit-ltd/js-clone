@@ -6,6 +6,8 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
+import typeInfo from '@qubit-ltd/typeinfo';
+import { NamingStyle } from '@qubit-ltd/naming-style';
 import cloneImpl from './impl/clone-impl';
 import DEFAULT_CLONE_OPTIONS from './default-clone-options';
 
@@ -96,6 +98,14 @@ function clone(source, options = {}) {
   // Note that we only store certain values, like Arrays or plain object.
   const cache = new WeakMap();
   options = { ...DEFAULT_CLONE_OPTIONS, ...options };
+  if (options.convertNaming) {
+    if (options.sourceNamingStyle) {
+      options.sourceNamingStyle = NamingStyle.of(options.sourceNamingStyle);
+    }
+    if (options.targetNamingStyle) {
+      options.targetNamingStyle = NamingStyle.of(options.targetNamingStyle);
+    }
+  }
   return cloneImpl(source, '', 0, options, cache);
 }
 
