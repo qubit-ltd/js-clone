@@ -219,13 +219,31 @@ describe('clone plain objects', () => {
   });
   describe('with removeEmptyFields option', () => {
     test('should remove empty fields if removeEmptyFields is true', () => {
-      const obj = { a: 1, b: '', c: null, d: undefined };
+      const obj = {
+        a: 1,
+        b: '',
+        c: null,
+        d: undefined,
+        e: [],
+        f: new Set(),
+        g: new Map(),
+        h: new Int8Array(0),
+      };
       const options = { removeEmptyFields: true };
       const result = clone(obj, options);
       expect(result).toEqual({ a: 1 });
     });
     test('should not remove empty fields if removeEmptyFields is false', () => {
-      const obj = { a: 1, b: '', c: null, d: undefined };
+      const obj = {
+        a: 1,
+        b: '',
+        c: null,
+        d: undefined,
+        e: [],
+        f: new Set(),
+        g: new Map(),
+        h: new Int8Array(0),
+      };
       const options = { removeEmptyFields: false };
       const result = clone(obj, options);
       expect(result).toEqual(obj);

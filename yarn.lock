@@ -2441,9 +2441,9 @@ __metadata:
     typescript: "npm:^5.9.2"
     vue: "npm:^3.5.21"
   peerDependencies:
-    "@babel/runtime": ^7.26.0
-    "@qubit-ltd/naming-style": ^1.3.9
-    "@qubit-ltd/typeinfo": ^3.3.2
+    "@babel/runtime": ^7.28.4
+    "@qubit-ltd/naming-style": ^1.3.10
+    "@qubit-ltd/typeinfo": ^3.3.4
   languageName: unknown
   linkType: soft
 

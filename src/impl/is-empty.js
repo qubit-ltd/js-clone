@@ -17,6 +17,12 @@ import typeInfo from '@qubit-ltd/typeinfo';
  *     Returns `true` if the value is empty, otherwise returns `false`.
  */
 function isEmpty(value) {
+  if (value === null || value === undefined) {
+    return true;
+  }
+  if (typeof value === 'string') {
+    return value.length === 0;
+  }
   const info = typeInfo(value);
   switch (info.category) {
     case 'undefined':       // fall down
