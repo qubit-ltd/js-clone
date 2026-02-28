@@ -52,8 +52,8 @@ function copyProperties(source, target, depth, options, cache) {
     if ((options.excludeReadonly) && (descriptor.writable === false)) {
       continue; // ignore readonly properties
     }
+    const targetKey = getTargetKey(sourceKey, options);
     if (options.includeAccessor && (descriptor.get || descriptor.set)) {
-      const targetKey = getTargetKey(sourceKey, options);
       Object.defineProperty(target, targetKey, descriptor);
       continue;
     }
@@ -61,13 +61,11 @@ function copyProperties(source, target, depth, options, cache) {
     // the property has getter/setter, descriptor.value do not exist, and
     // use [] will invoke the getter, which is just what we want.
     const value = source[sourceKey];
-    const targetKey = getTargetKey(sourceKey, options);
     // eslint-disable-next-line no-use-before-define
     if (options.removeEmptyFields && isEmpty(value)) {
-      delete target[targetKey];
-    } else {
-      target[targetKey] = cloneImpl(value, sourceKey, depth + 1, options, cache); // recursive call
+      continue;
     }
+    target[targetKey] = cloneImpl(value, sourceKey, depth + 1, options, cache); // recursive call
   }
 }
 
