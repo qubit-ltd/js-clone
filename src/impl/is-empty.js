@@ -25,9 +25,6 @@ function isEmpty(value) {
   }
   const info = typeInfo(value);
   switch (info.category) {
-    case 'undefined':       // fall down
-    case 'null':
-      return true;
     case 'string':          // fall down
     case 'array':           // fall down
     case 'typed-array':
