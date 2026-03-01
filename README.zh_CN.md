@@ -127,6 +127,10 @@ expect(copy2.credential).toBeInstanceOf(Credential);
   - `excludeReadonly: boolean`：若为 `true`，将不克隆只读属性。默认为 `false`。
   - `includeNonEnumerable: boolean`：若为 `true`，将克隆非枚举属性。默认为 `false`。
   - `includeNonConfigurable: boolean`：若为 `true`，将克隆非可配置属性。默认为 `false`。
+  - `autoIncludeNonConfigurableForFrozen: boolean`：若为 `true`，且
+    `includeNonConfigurable` 为 `false`，当当前源对象为 frozen 对象时，
+    克隆算法会自动包含其 non-configurable 属性。默认为 `true`。该默认值
+    用于避免克隆冻结业务对象时意外丢失数据字段。
   - `convertNaming: boolean` - 若为 `true`，克隆算法将根据指定的命名风格转换目标对象的属性名称。
     此选项的默认值为 `false`。
   - `sourceNamingStyle: string | NamingStyle`, 源对象的命名样式。该选项仅在 `convertNaming` 
@@ -306,6 +310,7 @@ const options = {
   excludeReadonly: true,
   includeNonEnumerable: true,
   includeNonConfigurable: false,
+  autoIncludeNonConfigurableForFrozen: true,
 };
 const copy2 = clone(obj, options);
 expect(copy2.x).toBe(1);

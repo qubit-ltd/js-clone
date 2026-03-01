@@ -53,10 +53,26 @@ import isEmpty from './is-empty';
  * @author Haixing Hu
  */
 function copyProperties(source, target, depth, options, cache) {
+  const isObjectLike = (source !== null)
+    && (typeof source === 'object' || typeof source === 'function');
+  const isSourceFrozen = isObjectLike && Object.isFrozen(source);
+  const autoIncludeNonConfigurable = Boolean(
+    options.autoIncludeNonConfigurableForFrozen
+      && !options.includeNonConfigurable
+      && isSourceFrozen,
+  );
+  const shouldIncludeNonConfigurable = options.includeNonConfigurable
+    || autoIncludeNonConfigurable;
+  if (autoIncludeNonConfigurable) {
+    const ownKeyCount = Reflect.ownKeys(source).length;
+    // eslint-disable-next-line no-console
+    console.info('[clone] autoIncludeNonConfigurableForFrozen triggered '
+      + `(type=${Object.prototype.toString.call(source)}, ownKeys=${ownKeyCount})`);
+  }
   const sourceKeys = Reflect.ownKeys(source);
   for (const sourceKey of sourceKeys) {
     const descriptor = Object.getOwnPropertyDescriptor(source, sourceKey);
-    if ((!options.includeNonConfigurable) && (!descriptor.configurable)) {
+    if ((!shouldIncludeNonConfigurable) && (!descriptor.configurable)) {
       continue; // ignore non-configurable properties, such as string[0]
     }
     if ((!options.includeNonEnumerable) && (!descriptor.enumerable)) {

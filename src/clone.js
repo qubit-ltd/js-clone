@@ -33,6 +33,11 @@ import DEFAULT_CLONE_OPTIONS from './default-clone-options';
  * - `includeNonConfigurable: boolean` - If this options is set to `true`, the
  *   cloning algorithm will clone the non-configurable attributes from the source
  *   object. The default value of this option is `false`.
+ * - `autoIncludeNonConfigurableForFrozen: boolean` - If this option is set to
+ *   `true`, and `includeNonConfigurable` is `false`, the cloning algorithm will
+ *   automatically clone non-configurable attributes when the current source
+ *   object is frozen. The default value of this option is `true`, to avoid
+ *   accidentally losing data fields on frozen business objects.
  * - `convertNaming: boolean` - If this options is set to `true`, the cloning
  *   algorithm will convert the names of the properties of the target object
  *   according to the specified naming styles. The default value of this

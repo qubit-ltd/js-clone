@@ -1,6 +1,6 @@
 {
   "name": "@qubit-ltd/clone",
-  "version": "1.13.5",
+  "version": "1.13.6",
   "description": "A JavaScript library provides a deep clone function",
   "author": "Haixing Hu",
   "license": "Apache-2.0",

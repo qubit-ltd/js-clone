@@ -178,3 +178,41 @@ describe('clone objects with options', () => {
     expect(copy.nc).toBe('xxx');
   });
 });
+
+describe('clone frozen objects with auto include non-configurable option', () => {
+  test('default options should auto include non-configurable properties on frozen object', () => {
+    const infoSpy = jest.spyOn(console, 'info').mockImplementation(() => {});
+    const frozenObj = {};
+    Object.defineProperty(frozenObj, 'token', {
+      value: 'secret',
+      writable: true,
+      configurable: false,
+      enumerable: true,
+    });
+    Object.freeze(frozenObj);
+    const copy = clone(frozenObj);
+    expect(copy.token).toBe('secret');
+    expect('token' in copy).toBe(true);
+    expect(infoSpy).toHaveBeenCalledTimes(1);
+    infoSpy.mockRestore();
+  });
+
+  test('autoIncludeNonConfigurableForFrozen=false should keep old behavior', () => {
+    const infoSpy = jest.spyOn(console, 'info').mockImplementation(() => {});
+    const frozenObj = {};
+    Object.defineProperty(frozenObj, 'token', {
+      value: 'secret',
+      writable: true,
+      configurable: false,
+      enumerable: true,
+    });
+    Object.freeze(frozenObj);
+    const copy = clone(frozenObj, {
+      autoIncludeNonConfigurableForFrozen: false,
+      includeNonConfigurable: false,
+    });
+    expect('token' in copy).toBe(false);
+    expect(infoSpy).not.toHaveBeenCalled();
+    infoSpy.mockRestore();
+  });
+});

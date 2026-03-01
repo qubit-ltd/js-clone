@@ -142,6 +142,11 @@ Deep clones a value or object.
       properties. Defaults to `false`.
     - `includeNonConfigurable: boolean`: If `true`, clones non-configurable 
       properties. Defaults to `false`.
+    - `autoIncludeNonConfigurableForFrozen: boolean`: If `true`, and
+      `includeNonConfigurable` is `false`, the clone algorithm automatically
+      includes non-configurable properties when the current source object is
+      frozen. Defaults to `true`. This default avoids accidental data loss when
+      cloning frozen business objects.
     - `convertNaming: boolean` - If `true`, the cloning algorithm will convert 
       the names of the properties of the target object according to the
       specified naming styles. The default value of this option is `false`.
@@ -361,6 +366,7 @@ const options = {
   excludeReadonly: true,
   includeNonEnumerable: true,
   includeNonConfigurable: false,
+  autoIncludeNonConfigurableForFrozen: true,
 };
 const copy2 = clone(obj, options);
 expect(copy2.x).toBe(1);

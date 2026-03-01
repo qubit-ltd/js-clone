@@ -46,6 +46,18 @@ const DEFAULT_CLONE_OPTIONS = {
   includeNonConfigurable: false,
 
   /**
+   * If this option is set to `true`, and `includeNonConfigurable` is `false`,
+   * the cloning algorithm will automatically include non-configurable
+   * properties when the current source object is frozen.
+   *
+   * This option helps avoid losing important data fields on business objects
+   * that are frozen intentionally (e.g. shared constants or immutable models).
+   *
+   * The default value of this option is `true`.
+   */
+  autoIncludeNonConfigurableForFrozen: true,
+
+  /**
    * If this options is set to `true`, the cloning algorithm will convert the
    * names of the properties of the target object according to the specified
    * naming styles.
