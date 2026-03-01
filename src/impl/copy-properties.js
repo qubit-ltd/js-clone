@@ -7,6 +7,19 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 /* eslint-disable import/no-cycle */
+/*
+ * Recursion-chain note:
+ *
+ * copyProperties() is a recursive bridge used by multiple cloneXxx modules.
+ * It calls cloneImpl() for each property value so that nested structures are
+ * cloned consistently with the same option set and cache.
+ *
+ * This file participates in intentional static cycles such as:
+ * clone-impl -> clone-object-impl -> clone-array/map/set -> copy-properties -> clone-impl
+ *
+ * The cycle is required by algorithm design (deep recursive traversal) and is
+ * evaluated at runtime through function calls, not via top-level eager code.
+ */
 import cloneImpl from './clone-impl';
 import getTargetKey from './get-target-key';
 import isEmpty from './is-empty';

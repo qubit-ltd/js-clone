@@ -7,6 +7,28 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 /* eslint-disable import/no-cycle */
+/*
+ * Recursion-chain note:
+ *
+ * This module is the central recursive entry of the cloning algorithm.
+ * The following static import cycles are intentional and reflect runtime
+ * recursion requirements instead of a module-initialization bug:
+ *
+ * 1) clone-impl -> clone-object-impl -> clone-array -> clone-impl
+ * 2) clone-impl -> clone-object-impl -> clone-map   -> clone-impl
+ * 3) clone-impl -> clone-object-impl -> clone-set   -> clone-impl
+ * 4) clone-impl -> clone-object-impl -> clone-array -> copy-properties -> clone-impl
+ * 5) clone-impl -> clone-object-impl -> clone-map   -> copy-properties -> clone-impl
+ * 6) clone-impl -> clone-object-impl -> clone-set   -> copy-properties -> clone-impl
+ *
+ * Runtime recursion path:
+ * cloneImpl() -> cloneObjectImpl() -> cloneXxx() -> cloneImpl()/copyProperties()
+ *
+ * Why this is safe:
+ * - modules export function declarations only;
+ * - no top-level eager invocation of imported clone functions;
+ * - recursion happens at call time with cache-based cycle protection.
+ */
 import typeInfo from '@qubit-ltd/typeinfo';
 import CLONE_HOOKS from './clone-hooks';
 import cloneObjectImpl from './clone-object-impl';

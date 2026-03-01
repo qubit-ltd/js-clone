@@ -7,6 +7,17 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 /* eslint-disable import/no-cycle */
+/*
+ * Recursion-chain note:
+ *
+ * cloneObjectImpl() is a dispatcher:
+ * - it selects a concrete cloneXxx implementation by type category;
+ * - selected cloneXxx implementations recursively call cloneImpl() for nested
+ *   values (array elements, map keys/values, set items, monkey-patched fields).
+ *
+ * Therefore this module is the middle node of intentional cycles:
+ * clone-impl <-> clone-object-impl <-> cloneXxx
+ */
 import cloneArray from './clone-array';
 import cloneBuffer from './clone-buffer';
 import cloneCopyConstructableObject from './clone-copy-constructable-object';
