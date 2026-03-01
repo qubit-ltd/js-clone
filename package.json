@@ -6,12 +6,12 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Haixing-Hu/js-clone.git"
+    "url": "git+https://github.com/qubit-ltd/js-clone.git"
   },
   "bugs": {
-    "url": "https://github.com/Haixing-Hu/js-clone/issues"
+    "url": "https://github.com/qubit-ltd/js-clone/issues"
   },
-  "homepage": "https://github.com/Haixing-Hu/js-clone",
+  "homepage": "https://github.com/qubit-ltd/js-clone",
   "main": "dist/clone.min.cjs",
   "module": "dist/clone.min.mjs",
   "exports": {

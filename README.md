@@ -3,8 +3,8 @@
 [![npm package](https://img.shields.io/npm/v/@qubit-ltd/clone.svg)](https://npmjs.com/package/@qubit-ltd/clone)
 [![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![中文文档](https://img.shields.io/badge/文档-中文版-blue.svg)](README.zh_CN.md)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-clone/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-clone/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/Haixing-Hu/js-clone/badge.svg?branch=master)](https://coveralls.io/github/Haixing-Hu/js-clone?branch=master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/qubit-ltd/js-clone/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/qubit-ltd/js-clone/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/qubit-ltd/js-clone/badge.svg?branch=master)](https://coveralls.io/github/qubit-ltd/js-clone?branch=master)
 
 [clone] is a JavaScript library for deeply cloning JavaScript objects. It 
 retains the prototype of the object and all its properties, and supports custom 
@@ -570,4 +570,4 @@ When contributing to this project, please ensure:
 [arguments]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
 [Intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 [Global object]: https://developer.mozilla.org/en-US/docs/Glossary/Global_object
-[GitHub repository]: https://github.com/Haixing-Hu/js-clone
+[GitHub repository]: https://github.com/qubit-ltd/js-clone

@@ -3,8 +3,8 @@
 [![npm package](https://img.shields.io/npm/v/@qubit-ltd/clone.svg)](https://npmjs.com/package/@qubit-ltd/clone)
 [![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![English Document](https://img.shields.io/badge/文档-中文版-blue.svg)](README.md)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-clone/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-clone/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/Haixing-Hu/js-clone/badge.svg?branch=master)](https://coveralls.io/github/Haixing-Hu/js-clone?branch=master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/qubit-ltd/js-clone/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/qubit-ltd/js-clone/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/qubit-ltd/js-clone/badge.svg?branch=master)](https://coveralls.io/github/qubit-ltd/js-clone?branch=master)
 
 [clone] 是一个 JavaScript 库，用于深度克隆 JavaScript 对象。它保持对象及其所有属性的原型，
 并支持自定义克隆钩子函数，允许对指定类型执行特殊的克隆算法。
@@ -512,4 +512,4 @@ yarn test --coverage
 [arguments]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
 [Intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 [全局对象]: https://developer.mozilla.org/en-US/docs/Glossary/Global_object
-[GitHub仓库]: https://github.com/Haixing-Hu/js-clone
+[GitHub仓库]: https://github.com/qubit-ltd/js-clone
