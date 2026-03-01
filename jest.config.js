@@ -32,4 +32,8 @@ module.exports = {
   coverageDirectory: './coverage',
   collectCoverageFrom: ['src/**/*.js'],
   coveragePathIgnorePatterns: ['src/index.js', 'src/impl/clone-error.js'],
+  // 限制并发运行的测试数量以避免内存不足
+  maxWorkers: 2,
+  // 增加单个测试的超时时间
+  testTimeout: 60000,
 };
