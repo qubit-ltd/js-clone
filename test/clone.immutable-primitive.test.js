@@ -44,7 +44,6 @@ describe('clone immutable primitives', () => {
     expect(clone(symbol)).toBe(symbol);
   });
   if (BIGINT_EXISTS) {
-    /* eslint-disable no-undef */
     test('clone(bigint)', () => {
       expect(clone(0n)).toBe(0n);
       expect(clone(100n)).toBe(100n);

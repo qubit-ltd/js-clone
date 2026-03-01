@@ -61,7 +61,7 @@ function copyProperties(source, target, depth, options, cache) {
     // the property has getter/setter, descriptor.value do not exist, and
     // use [] will invoke the getter, which is just what we want.
     const value = source[sourceKey];
-    // eslint-disable-next-line no-use-before-define
+
     if (options.removeEmptyFields && isEmpty(value)) {
       continue;
     }

@@ -6,7 +6,6 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import typeInfo from '@qubit-ltd/typeinfo';
 import { NamingStyle } from '@qubit-ltd/naming-style';
 import cloneImpl from './impl/clone-impl';
 import DEFAULT_CLONE_OPTIONS from './default-clone-options';

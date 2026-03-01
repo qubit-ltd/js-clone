@@ -27,7 +27,6 @@ import copyProperties from './copy-properties';
  * @author Haixing Hu
  */
 function clonePromise(source, depth, options, cache) {
-  // eslint-disable-next-line no-undef
   const result = new Promise(source.then.bind(source));
   // add to the cache to avoid circular references
   cache.set(source, result);

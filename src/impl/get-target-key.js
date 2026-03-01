@@ -6,7 +6,6 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import { NamingStyle } from '@qubit-ltd/naming-style';
 
 /**
  * Gets the key of the target object from the corresponding key of the source

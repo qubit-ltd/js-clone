@@ -22,8 +22,8 @@ describe('clone typed arrays et al', () => {
     testTypedArray(Uint16Array, 12);
     testTypedArray(Int32Array, 12);
     testTypedArray(Uint32Array, 12);
-    testTypedArray(BigInt64Array, 12n);     // eslint-disable-line no-undef
-    testTypedArray(BigUint64Array, 12n);    // eslint-disable-line no-undef
+    testTypedArray(BigInt64Array, 12n);
+    testTypedArray(BigUint64Array, 12n);
     testTypedArray(Float32Array, 3.14);
     testTypedArray(Float64Array, 3.14);
   });

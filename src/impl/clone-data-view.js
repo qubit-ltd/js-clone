@@ -29,7 +29,7 @@ import copyProperties from './copy-properties';
  */
 function cloneDataView(source, depth, options, cache) {
   const buffer = cloneBuffer(source.buffer, depth + 1, options, cache);
-  // eslint-disable-next-line no-undef
+
   const result = new DataView(buffer, source.byteOffset, source.byteLength);
   // add to the cache to avoid circular references
   cache.set(source, result);

@@ -28,7 +28,6 @@ import copyProperties from './copy-properties';
  * @author Haixing Hu
  */
 function cloneSet(source, depth, options, cache) {
-  // eslint-disable-next-line no-undef
   const result = new Set();
   // add to the cache to avoid circular references
   cache.set(source, result);

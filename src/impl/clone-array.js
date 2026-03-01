@@ -37,7 +37,6 @@ function cloneArray(source, depth, options, cache) {
     let i;
     for (i = 0; i < source.length; i++) {
       if (i in source) {
-        // eslint-disable-next-line no-use-before-define
         result.push(cloneImpl(source[i], String(i), depth + 1, options, cache));
       } else {  // Array is sparse
         break wellBehaved;        // eslint-disable-line no-labels
